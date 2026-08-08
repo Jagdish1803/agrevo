@@ -12,7 +12,7 @@ export function Founder() {
   return (
     <section id="about" className="py-20 md:py-28">
       <div className="container-wide">
-        <SectionHeading label="Intro" title="Meet the Founder" />
+        <SectionHeading label="Intro" title="Meet the Studio" />
 
         <div className="mt-12 grid gap-10 md:mt-16 md:grid-cols-[0.85fr_1.15fr] md:gap-14">
           <Reveal direction="right">
@@ -22,11 +22,11 @@ export function Founder() {
           <div className="flex flex-col justify-between gap-10">
             <Reveal direction="up" delay={0.08}>
               <p className="max-w-[58ch] text-[16px] leading-relaxed text-ink-soft md:text-[18px]">
-                {site.founder} is a visual designer focused on bold, functional
-                design systems. He works with creative teams and startups to
-                build standout brands and seamless digital experiences. Based in{" "}
-                {site.city}, he balances clarity with character — and spends his
-                spare hours on motion design and interactive visuals.
+                {site.name} is a small studio building websites and design
+                systems for startups and creative teams. We work the way the
+                name reads — logic first, then craft: structure the problem,
+                then weave the interface around it. Based in {site.city},
+                shipping for teams anywhere.
               </p>
             </Reveal>
 

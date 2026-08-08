@@ -27,7 +27,7 @@ export function CtaBanner({
             className="pointer-events-none absolute -bottom-1/2 left-1/2 size-[600px] -translate-x-1/2 opacity-55"
             style={{
               background:
-                "radial-gradient(50% 50% at 50% 50%, rgba(255,77,0,0.65) 0%, rgba(255,77,0,0) 70%)",
+                "radial-gradient(50% 50% at 50% 50%, rgba(124,58,237,0.65) 0%, rgba(124,58,237,0) 70%)",
             }}
           />
 

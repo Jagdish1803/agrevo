@@ -50,7 +50,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-x-0 top-0 h-[70vh]"
         style={{
           background:
-            "radial-gradient(60% 55% at 50% 0%, rgba(255,255,255,0.9) 0%, rgba(240,240,240,0) 100%)",
+            "radial-gradient(60% 55% at 50% 0%, rgba(241,241,245,0.9) 0%, rgba(241,241,245,0) 100%)",
         }}
       />
 

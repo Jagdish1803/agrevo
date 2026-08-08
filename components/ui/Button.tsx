@@ -6,9 +6,11 @@ import { ArrowRight } from "@/components/ui/icons";
 
 type Variant = "dark" | "light" | "accent" | "outline";
 
+/* Buttons are set in Poppins SemiBold, as the brand guidelines require for
+   headings, nav labels and buttons. */
 const base =
-  "group/btn relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full " +
-  "px-6 py-3.5 text-[15px] font-medium leading-none transition-colors duration-300 " +
+  "group/btn font-display relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full " +
+  "px-6 py-3.5 text-[15px] font-semibold leading-none transition-colors duration-300 " +
   "md:px-7 md:py-4";
 
 const variants: Record<Variant, string> = {

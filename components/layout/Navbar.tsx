@@ -71,7 +71,8 @@ export function Navbar() {
               aria-label="Primary"
               className="absolute left-1/2 hidden -translate-x-1/2 md:block"
             >
-              <ul className="flex items-center gap-8 text-[15px]">
+              {/* Nav labels are set in Poppins Medium per the brand guidelines. */}
+              <ul className="font-display flex items-center gap-8 text-[15px] font-medium">
                 {navLinks.map((link) => (
                   <li key={link.href}>
                     <Link

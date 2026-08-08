@@ -1,8 +1,8 @@
 {
-  "name": "agero",
+  "name": "logicloom-web",
   "version": "1.0.0",
   "private": true,
-  "description": "Agero — Modern Portfolio & Creative Agency, built with Next.js.",
+  "description": "LogicLoom Web — Web Design & Development Studio, built with Next.js.",
   "type": "module",
   "scripts": {
     "dev": "next dev",

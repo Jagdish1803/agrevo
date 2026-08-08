@@ -7,7 +7,7 @@ import { ButtonLink } from "@/components/ui/Button";
 export const metadata: Metadata = {
   title: "Works",
   description:
-    "Selected branding, website and product work from the Agero studio.",
+    "Selected branding, website and product work from the LogicLoom Web studio.",
   alternates: { canonical: "/works" },
 };
 

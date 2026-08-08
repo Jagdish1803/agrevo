@@ -6,12 +6,14 @@
  * requests and stays crisp at any density.
  */
 
+/* Indigo→violet ramps drawn from the brand palette, with a few interpolated
+   steps so five distinct portraits stay distinguishable side by side. */
 const palettes = [
-  ["#ff4d00", "#7a1f00"],
-  ["#2b2b2b", "#0c0c0c"],
-  ["#ff7a3d", "#a33200"],
-  ["#4a4a4a", "#1a1a1a"],
-  ["#ff5c1a", "#331000"],
+  ["#7C3AED", "#2D2B6B"],
+  ["#2D2B6B", "#1A1A2E"],
+  ["#A78BFA", "#5B2FC4"],
+  ["#4B4A6A", "#1A1A2E"],
+  ["#8B5CF6", "#241F4D"],
 ] as const;
 
 export function Avatar({

@@ -47,13 +47,13 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden bg-night text-white">
-      {/* Ambient warm glow, matching the reference footer */}
+      {/* Ambient violet glow, picking up the accent from the brand palette */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -bottom-1/3 left-1/2 h-[70vh] w-[120vw] -translate-x-1/2 opacity-40"
         style={{
           background:
-            "radial-gradient(50% 50% at 50% 50%, rgba(255,77,0,0.55) 0%, rgba(255,77,0,0) 70%)",
+            "radial-gradient(50% 50% at 50% 50%, rgba(124,58,237,0.55) 0%, rgba(124,58,237,0) 70%)",
         }}
       />
 

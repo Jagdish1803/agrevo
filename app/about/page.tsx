@@ -12,7 +12,7 @@ import { ButtonLink } from "@/components/ui/Button";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Shaping next-generation experiences through design, technology and purpose — meet the studio behind Agero.",
+    "Logic first, then craft — meet the studio behind LogicLoom Web.",
   alternates: { canonical: "/about" },
 };
 
@@ -20,9 +20,9 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="Meet Agero"
-        title="Bold Ideas, Real Impact"
-        description="Shaping next-gen experiences through design, tech and purpose. At Agero, innovation is not a buzzword — it is the foundation."
+        eyebrow="Meet LogicLoom Web"
+        title="Logic First, Then Craft"
+        description="Structure the problem, then weave the interface around it. At LogicLoom Web, every website starts as a system before it becomes a screen."
         action={<ButtonLink href="/works">View Projects</ButtonLink>}
       />
       <Manifesto text="We help fast-moving digital startups launch sharper brands and websites — with clarity, speed, and no drama. Think bold storytelling, pixel-perfect design and agile execution, all tailored to scale your next big move." />

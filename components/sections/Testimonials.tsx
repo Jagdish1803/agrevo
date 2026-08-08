@@ -42,13 +42,13 @@ export function Testimonials() {
         className="pointer-events-none absolute top-0 left-1/2 h-[50vh] w-[110vw] -translate-x-1/2 opacity-45"
         style={{
           background:
-            "radial-gradient(50% 50% at 50% 0%, rgba(255,77,0,0.5) 0%, rgba(255,77,0,0) 70%)",
+            "radial-gradient(50% 50% at 50% 0%, rgba(124,58,237,0.5) 0%, rgba(124,58,237,0) 70%)",
         }}
       />
 
       <div className="container-wide relative">
         <SectionHeading
-          label="Why clients love Agero"
+          label="Why clients love LogicLoom Web"
           title="Testimonials"
           tone="dark"
         />

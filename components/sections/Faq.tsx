@@ -23,7 +23,7 @@ export function Faq() {
         <SectionHeading
           label="FAQs"
           title="Your Questions, Answered"
-          description="Helping you understand our process and offerings at Agero."
+          description="Helping you understand our process and offerings at LogicLoom Web."
         />
 
         <div className="mt-12 md:mt-16">

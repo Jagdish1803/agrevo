@@ -56,7 +56,7 @@ export const projects: Project[] = [
     ],
     review: {
       quote:
-        "Franklin took a loose set of ideas and returned a brand that finally looks like the studio we actually are.",
+        "LogicLoom took a loose set of ideas and returned a brand that finally looks like the studio we actually are.",
       author: "John Watson",
       role: "Founder, Archin Design Studio",
     },
@@ -195,20 +195,20 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Franklin turned our ideas into a sharp, clean brand. Fast, easy, and right on point.",
+      "LogicLoom turned our ideas into a sharp, clean brand. Fast, easy, and right on point.",
     author: "Ethan Moore",
     role: "Co-founder, NovaTech",
     initials: "EM",
   },
   {
     quote:
-      "Clear, thoughtful, and fast — Franklin made the whole process effortless.",
+      "Clear, thoughtful, and fast — LogicLoom made the whole process effortless.",
     author: "Olivia Tran",
     role: "Creative Director, Bloom Agency",
     initials: "OT",
   },
   {
-    quote: "Smart design, smooth delivery. Franklin is great to work with.",
+    quote: "Smart design, smooth delivery. LogicLoom is great to work with.",
     author: "Lucas Bennett",
     role: "Product Manager, Hexa Studio",
     initials: "LB",
@@ -226,10 +226,10 @@ export const stats = [
 /* -------------------------------------------------------------------- */
 
 export const timeline = [
-  { role: "Founder at Agero", period: "2024-Now" },
-  { role: "Brand Designer at Google", period: "2023-2024" },
-  { role: "Web Designer at Shopify", period: "2018-2023" },
-  { role: "Junior Designer at Meta", period: "2015-2018" },
+  { role: "Full-service web & brand studio", period: "2024-Now" },
+  { role: "Design systems practice added", period: "2023-2024" },
+  { role: "Ecommerce and product builds", period: "2018-2023" },
+  { role: "LogicLoom Web founded", period: "2015-2018" },
 ] as const;
 
 /* -------------------------------------------------------------------- */
@@ -311,7 +311,7 @@ export const plans: Plan[] = [
 
 export const faqs = [
   {
-    q: "Why Agero instead of a full-time designer?",
+    q: "Why LogicLoom Web instead of a full-time designer?",
     a: "You get senior-level output without the overhead of a salary, benefits or a hiring cycle. Scale the work up when you are shipping and pause it when you are not.",
   },
   {
@@ -319,7 +319,7 @@ export const faqs = [
     a: "Pretty quick! Most designs are delivered in 2–3 business days. We prioritize quality without slowing you down.",
   },
   {
-    q: "What is the Agero process like?",
+    q: "What is the LogicLoom Web process like?",
     a: "A short kickoff to align on the brief, a first pass within days, then focused revision rounds. You always know what is in progress and what lands next.",
   },
   {

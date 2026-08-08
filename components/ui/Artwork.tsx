@@ -3,8 +3,8 @@
  *
  * The reference site fills its cards with stock photography and licensed
  * mockups. Rather than reuse those files, this module renders original
- * vector compositions in the same visual language — dark charcoal grounds,
- * warm orange light, hard geometry and fine grain — so layout, aspect
+ * vector compositions in the brand's visual language — deep indigo grounds,
+ * violet light, hard geometry and fine grain — so layout, aspect
  * ratios and contrast behave identically. Every piece is pure SVG/CSS:
  * no network requests, infinitely scalable, and themable from tokens.
  */
@@ -51,7 +51,7 @@ function Frame({
 /*  Project artwork                                                    */
 /* ------------------------------------------------------------------ */
 
-/** Archin — architectural grid, warm light spill through a facade. */
+/** Archin — architectural grid, violet light spill through a facade. */
 function ArchinArt() {
   return (
     <Frame>
@@ -59,7 +59,7 @@ function ArchinArt() {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(120% 90% at 78% 18%, #ff5c1a 0%, #7d2600 32%, #180a04 68%, #0c0c0c 100%)",
+            "radial-gradient(120% 90% at 78% 18%, #7C3AED 0%, #3D2A7A 32%, #17162B 68%, #1A1A2E 100%)",
         }}
       />
       <svg
@@ -69,8 +69,8 @@ function ArchinArt() {
       >
         <defs>
           <linearGradient id="ar-glass" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#ffb27a" stopOpacity="0.55" />
-            <stop offset="100%" stopColor="#ff4d00" stopOpacity="0.05" />
+            <stop offset="0%" stopColor="#A78BFA" stopOpacity="0.55" />
+            <stop offset="100%" stopColor="#7C3AED" stopOpacity="0.05" />
           </linearGradient>
         </defs>
         {/* Facade slabs */}
@@ -81,7 +81,7 @@ function ArchinArt() {
             y={60 + (i % 3) * 26}
             width="46"
             height={380 - (i % 3) * 40}
-            fill="#0c0c0c"
+            fill="#1A1A2E"
             opacity={0.62}
           />
         ))}
@@ -109,7 +109,7 @@ function ArchinArt() {
   );
 }
 
-/** VNTNR — an editorial wine label: deep vertical panel over warm ground. */
+/** VNTNR — an editorial wine label: deep vertical panel over violet ground. */
 function VntnrArt() {
   return (
     <Frame>
@@ -117,7 +117,7 @@ function VntnrArt() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(115deg, #e8ded4 0%, #c96a3c 38%, #8b2f14 62%, #2a0d06 100%)",
+            "linear-gradient(115deg, #E4E1F5 0%, #7A52D8 38%, #4A1D96 62%, #1F1B4D 100%)",
         }}
       />
       <svg
@@ -127,16 +127,16 @@ function VntnrArt() {
       >
         <defs>
           <linearGradient id="vn-panel" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#3b1409" stopOpacity="0.94" />
-            <stop offset="55%" stopColor="#5c2110" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#2a0d06" stopOpacity="0.96" />
+            <stop offset="0%" stopColor="#2D2B6B" stopOpacity="0.94" />
+            <stop offset="55%" stopColor="#35236A" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="#1F1B4D" stopOpacity="0.96" />
           </linearGradient>
         </defs>
         {/* Soft produce forms echoing the original photography */}
-        <circle cx="112" cy="126" r="98" fill="#d1622c" opacity="0.85" />
-        <circle cx="150" cy="392" r="118" fill="#b23a18" opacity="0.9" />
-        <circle cx="690" cy="150" r="132" fill="#a8371a" opacity="0.86" />
-        <circle cx="726" cy="424" r="96" fill="#d1622c" opacity="0.8" />
+        <circle cx="112" cy="126" r="98" fill="#6D3BD1" opacity="0.85" />
+        <circle cx="150" cy="392" r="118" fill="#5B21B6" opacity="0.9" />
+        <circle cx="690" cy="150" r="132" fill="#5B21B6" opacity="0.86" />
+        <circle cx="726" cy="424" r="96" fill="#6D3BD1" opacity="0.8" />
         {/* Label panel */}
         <rect x="272" y="0" width="256" height="500" fill="url(#vn-panel)" />
         <line
@@ -183,7 +183,7 @@ function AeorimArt() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(160deg, #1c1c1c 0%, #101010 55%, #070707 100%)",
+            "linear-gradient(160deg, #26243F 0%, #1A1A2E 55%, #100F1F 100%)",
         }}
       />
       <svg
@@ -193,9 +193,9 @@ function AeorimArt() {
       >
         <defs>
           <linearGradient id="ae-poster" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#ffd08a" />
-            <stop offset="45%" stopColor="#ff6a1f" />
-            <stop offset="100%" stopColor="#2b0b02" />
+            <stop offset="0%" stopColor="#DDD3FB" />
+            <stop offset="45%" stopColor="#8B5CF6" />
+            <stop offset="100%" stopColor="#1F1B4D" />
           </linearGradient>
         </defs>
         {/* Wall panel joints */}
@@ -222,9 +222,9 @@ function AeorimArt() {
         <rect x="332" y="96" width="136" height="300" fill="url(#ae-poster)" />
         <path
           d="M400 208c22 0 36 16 36 40v148h-72V248c0-24 14-40 36-40Z"
-          fill="rgba(20,10,4,0.62)"
+          fill="rgba(26,26,46,0.62)"
         />
-        <circle cx="400" cy="186" r="26" fill="rgba(20,10,4,0.62)" />
+        <circle cx="400" cy="186" r="26" fill="rgba(26,26,46,0.62)" />
         {/* Floor reflection */}
         <rect
           x="332"
@@ -281,10 +281,10 @@ export function ServiceArt({
           style={{
             background:
               variant === "web"
-                ? "radial-gradient(90% 120% at 20% 0%, #2a2a2a 0%, #101010 60%, #0a0a0a 100%)"
+                ? "radial-gradient(90% 120% at 20% 0%, #2D2B6B 0%, #1A1A2E 60%, #12111F 100%)"
                 : variant === "brand"
-                  ? "radial-gradient(100% 120% at 80% 10%, #ff5c1a 0%, #6d2308 40%, #120704 100%)"
-                  : "radial-gradient(90% 120% at 50% 100%, #3a3a3a 0%, #131313 55%, #0a0a0a 100%)",
+                  ? "radial-gradient(100% 120% at 80% 10%, #7C3AED 0%, #3A2470 40%, #141328 100%)"
+                  : "radial-gradient(90% 120% at 50% 100%, #3A3878 0%, #1A1A2E 55%, #12111F 100%)",
           }}
         />
         <svg
@@ -317,10 +317,10 @@ export function ServiceArt({
                   cx={84 + i * 18}
                   cy="73"
                   r="5"
-                  fill={i === 0 ? "#ff4d00" : "rgba(255,255,255,0.28)"}
+                  fill={i === 0 ? "#7C3AED" : "rgba(255,255,255,0.28)"}
                 />
               ))}
-              <rect x="88" y="122" width="196" height="14" rx="3" fill="#ff4d00" />
+              <rect x="88" y="122" width="196" height="14" rx="3" fill="#7C3AED" />
               <rect
                 x="88"
                 y="150"
@@ -360,7 +360,7 @@ export function ServiceArt({
                 width="196"
                 height="244"
                 rx="10"
-                fill="rgba(12,12,12,0.72)"
+                fill="rgba(26,26,46,0.72)"
               />
               <rect
                 x="300"
@@ -376,9 +376,9 @@ export function ServiceArt({
                 width="228"
                 height="116"
                 rx="10"
-                fill="rgba(12,12,12,0.72)"
+                fill="rgba(26,26,46,0.72)"
               />
-              <circle cx="170" cy="176" r="44" fill="#ff4d00" />
+              <circle cx="170" cy="176" r="44" fill="#7C3AED" />
               <rect x="126" y="248" width="88" height="12" rx="3" fill="#ffffff" />
               <rect
                 x="126"
@@ -388,14 +388,14 @@ export function ServiceArt({
                 rx="3"
                 fill="rgba(255,255,255,0.45)"
               />
-              <rect x="330" y="126" width="120" height="14" rx="3" fill="#131313" />
+              <rect x="330" y="126" width="120" height="14" rx="3" fill="#1A1A2E" />
               <rect
                 x="330"
                 y="152"
                 width="88"
                 height="10"
                 rx="3"
-                fill="rgba(19,19,19,0.4)"
+                fill="rgba(26,26,46,0.4)"
               />
             </>
           ) : null}
@@ -418,13 +418,13 @@ export function ServiceArt({
                 stroke="rgba(255,255,255,0.1)"
                 strokeWidth="2"
               />
-              <path d="M300 122 366 288H234Z" fill="#ff4d00" />
+              <path d="M300 122 366 288H234Z" fill="#7C3AED" />
               <rect
                 x="286"
                 y="196"
                 width="28"
                 height="28"
-                fill="#0c0c0c"
+                fill="#1A1A2E"
                 transform="rotate(45 300 210)"
               />
               <line
@@ -454,12 +454,12 @@ export function ServiceArt({
 /* ------------------------------------------------------------------ */
 
 const editorialGradients = [
-  "linear-gradient(140deg,#ff6a1f 0%,#8b2f0e 48%,#140704 100%)",
-  "linear-gradient(140deg,#2f2f2f 0%,#141414 52%,#080808 100%)",
-  "linear-gradient(140deg,#ffb27a 0%,#ff4d00 40%,#3a1204 100%)",
-  "linear-gradient(140deg,#1f1f1f 0%,#3a3a3a 46%,#0c0c0c 100%)",
-  "linear-gradient(140deg,#ff8a4c 0%,#6d2308 55%,#100603 100%)",
-  "linear-gradient(140deg,#404040 0%,#171717 50%,#090909 100%)",
+  "linear-gradient(140deg,#8B5CF6 0%,#4A1D96 48%,#15142A 100%)",
+  "linear-gradient(140deg,#333157 0%,#1A1A2E 52%,#111020 100%)",
+  "linear-gradient(140deg,#A78BFA 0%,#7C3AED 40%,#2D2B6B 100%)",
+  "linear-gradient(140deg,#232145 0%,#3A3878 46%,#1A1A2E 100%)",
+  "linear-gradient(140deg,#A78BFA 0%,#3A2470 55%,#131226 100%)",
+  "linear-gradient(140deg,#3A3878 0%,#201E38 50%,#121121 100%)",
 ];
 
 /** Deterministic abstract cover for a blog card. */
@@ -525,7 +525,7 @@ export function PortraitArt({ className = "" }: ArtProps) {
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(85% 70% at 50% 20%, #ff8a4c 0%, #a63b12 30%, #2a0f05 66%, #0c0c0c 100%)",
+              "radial-gradient(85% 70% at 50% 20%, #A78BFA 0%, #5B21B6 30%, #1F1B4D 66%, #1A1A2E 100%)",
           }}
         />
         <svg
@@ -533,10 +533,10 @@ export function PortraitArt({ className = "" }: ArtProps) {
           preserveAspectRatio="xMidYMid slice"
           className="absolute inset-0 size-full"
         >
-          <ellipse cx="200" cy="196" rx="86" ry="102" fill="rgba(10,6,4,0.72)" />
+          <ellipse cx="200" cy="196" rx="86" ry="102" fill="rgba(18,17,31,0.72)" />
           <path
             d="M42 520c0-96 70-158 158-158s158 62 158 158Z"
-            fill="rgba(10,6,4,0.78)"
+            fill="rgba(18,17,31,0.78)"
           />
           <path
             d="M114 176c0-56 38-92 86-92s86 36 86 92c0 8-4 12-10 12-14-34-42-52-76-52s-62 18-76 52c-6 0-10-4-10-12Z"
@@ -553,9 +553,9 @@ export function PortraitArt({ className = "" }: ArtProps) {
 /* ------------------------------------------------------------------ */
 
 const heroPills = [
-  "linear-gradient(135deg,#ff6a1f,#7d2600)",
-  "linear-gradient(135deg,#3a3a3a,#0c0c0c)",
-  "linear-gradient(135deg,#ffb27a,#b23a18)",
+  "linear-gradient(135deg,#7C3AED,#2D2B6B)",
+  "linear-gradient(135deg,#3A3878,#1A1A2E)",
+  "linear-gradient(135deg,#A78BFA,#5B21B6)",
 ];
 
 export function HeroPill({

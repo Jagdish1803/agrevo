@@ -42,7 +42,7 @@ function PlanCard({ plan }: { plan: Plan }) {
           className="pointer-events-none absolute -top-1/3 right-0 size-[420px] opacity-45"
           style={{
             background:
-              "radial-gradient(50% 50% at 50% 50%, rgba(255,77,0,0.6) 0%, rgba(255,77,0,0) 70%)",
+              "radial-gradient(50% 50% at 50% 50%, rgba(124,58,237,0.6) 0%, rgba(124,58,237,0) 70%)",
           }}
         />
       ) : null}

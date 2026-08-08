@@ -11,19 +11,31 @@
   --breakpoint-lg: 1200px;
   --breakpoint-xl: 1440px;
 
-  /* Palette */
-  --color-canvas: #f0f0f0; /* page background */
-  --color-surface: #ffffff; /* cards */
-  --color-ink: #131313; /* primary text */
-  --color-ink-soft: #5c5c5c; /* secondary text */
-  --color-ink-faint: #999999;
-  --color-line: #dcdcdc; /* hairlines */
-  --color-accent: #ff4d00; /* brand orange */
-  --color-night: #0c0c0c; /* dark sections */
-  --color-night-soft: #1a1a1a;
+  /* ---------------------------------------------------------------- */
+  /*  Palette — LogicLoom Web brand guidelines                         */
+  /*  Deep Indigo #2D2B6B · Vibrant Violet #7C3AED · Charcoal #1A1A2E  */
+  /*  White #FFFFFF · Cloud Gray #F1F1F5                               */
+  /* ---------------------------------------------------------------- */
+  --color-canvas: #ffffff; /* White — primary background */
+  --color-surface: #f1f1f5; /* Cloud Gray — cards, secondary background */
+  --color-brand: #2d2b6b; /* Deep Indigo — logo, headings, dominant */
+  --color-accent: #7c3aed; /* Vibrant Violet — links, buttons, highlights */
+  --color-ink: #1a1a2e; /* Charcoal — body text */
+  --color-night: #1a1a2e; /* Charcoal — dark sections */
+  --color-night-soft: #2d2b6b; /* Deep Indigo — raised dark surfaces */
 
-  /* Type */
-  --font-display: var(--font-cal-sans), "Cal Sans", "Inter", sans-serif;
+  /* Neutral steps derived from Charcoal/Cloud Gray for text hierarchy
+     and hairlines — the five brand colours alone leave no mid-tones. */
+  --color-ink-soft: #55546e; /* secondary text */
+  --color-ink-faint: #8b8aa3; /* tertiary text */
+  --color-line: #e2e2ea; /* hairlines, dividers */
+
+  /* Signature gradient: precision (Logic) moving into craft (Loom) */
+  --color-gradient-from: #2d2b6b;
+  --color-gradient-to: #7c3aed;
+
+  /* Type — Poppins for headings, Inter for body */
+  --font-display: var(--font-poppins), "Poppins", system-ui, sans-serif;
   --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
 
   /* Motion */
@@ -101,7 +113,7 @@
     background: var(--color-canvas);
   }
   ::-webkit-scrollbar-thumb {
-    background: #c9c9c9;
+    background: var(--color-ink-faint);
     border-radius: 999px;
     border: 3px solid var(--color-canvas);
   }
@@ -141,18 +153,21 @@
     }
   }
 
-  /* Display headline — Cal Sans, tight tracking, tight leading */
+  /* Display headline — Poppins SemiBold, tight tracking and leading.
+     Deep Indigo is the default heading colour; dark sections override it
+     with a `text-*` utility, which wins over this components-layer rule. */
   .display {
     font-family: var(--font-display);
-    font-weight: 400;
-    line-height: 0.95;
-    letter-spacing: -0.02em;
+    font-weight: 600;
+    color: var(--color-brand);
+    line-height: 1;
+    letter-spacing: -0.03em;
   }
 
   /* Outlined ghost variant used inside the hero headline */
   .display-outline {
     color: transparent;
-    -webkit-text-stroke: 1.5px var(--color-ink);
+    -webkit-text-stroke: 1.5px var(--color-brand);
     paint-order: stroke fill;
   }
 

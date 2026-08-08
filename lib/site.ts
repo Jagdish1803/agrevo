@@ -4,16 +4,15 @@
  */
 
 export const site = {
-  name: "Agero",
-  title: "Agero — Modern Portfolio & Creative Agency",
+  name: "LogicLoom Web",
+  title: "LogicLoom Web — Web Design & Development Studio",
   description:
-    "We make it easy for startups to launch, grow, and scale with clean, conversion-focused designs — no delays, no drama.",
-  url: "https://agero.example.com",
+    "We weave logic and craft into websites that work — strategy, design and build for teams who want to launch fast and scale clean.",
+  url: "https://logicloomweb.com",
   locale: "en_GB",
-  email: "jnaikar62@gmail.com",
+  email: "logicloomweb@gmail.com",
   city: "London",
   timeZone: "Europe/London",
-  founder: "Franklin Clinton",
 } as const;
 
 export const navLinks = [

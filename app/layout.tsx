@@ -1,15 +1,16 @@
 import type { Metadata, Viewport } from "next";
-import { Cal_Sans, Inter } from "next/font/google";
+import { Poppins, Inter } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-/* Display face used for every headline; body face for everything else. */
-const calSans = Cal_Sans({
+/* Headings — Poppins. SemiBold/Bold per the brand guidelines; Medium is
+   carried for nav labels and small caps. Body face follows below. */
+const poppins = Poppins({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-cal-sans",
+  weight: ["500", "600", "700"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -27,14 +28,15 @@ export const metadata: Metadata = {
   },
   description: site.description,
   applicationName: site.name,
-  authors: [{ name: site.founder }],
+  authors: [{ name: site.name }],
   keywords: [
-    "creative agency",
-    "brand design",
     "web design",
+    "web development",
+    "brand design",
     "logo design",
-    "portfolio",
-    "design studio London",
+    "design system",
+    "web studio",
+    "LogicLoom Web",
   ],
   alternates: { canonical: "/" },
   openGraph: {
@@ -58,7 +60,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f0f0f0",
+  themeColor: "#2d2b6b",
   width: "device-width",
   initialScale: 1,
 };
@@ -71,8 +73,8 @@ const structuredData = {
   description: site.description,
   url: site.url,
   email: site.email,
+  logo: `${site.url}/logo-mark.svg`,
   address: { "@type": "PostalAddress", addressLocality: site.city, addressCountry: "GB" },
-  founder: { "@type": "Person", name: site.founder },
   areaServed: "Worldwide",
 };
 
@@ -80,7 +82,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${calSans.variable} ${inter.variable}`}>
+    <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <body className="antialiased">
         <script
           type="application/ld+json"
