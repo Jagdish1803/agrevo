@@ -160,8 +160,9 @@ All of it is centralised on the easing curves in `lib/motion.ts`.
 
 - Every route is **statically prerendered** (`○` / `●` in the build output).
 - Server Components by default; `"use client"` only where interaction demands.
-- Zero image requests — all artwork is inline SVG/CSS (see below), so there is
-  no LCP image to optimise and nothing to lazy-load.
+- Concept artwork is inline SVG/CSS (see below); the only raster images are
+  case-study screenshots, served through `next/image` as AVIF/WebP with
+  responsive `sizes`, lazy-loaded except the case-study cover.
 - Fonts self-hosted and preloaded through `next/font/google`, `display: swap`.
 - `optimizePackageImports` for `motion` keeps the client bundle lean.
 - Marquees animate `transform` only, on the compositor.
@@ -177,9 +178,23 @@ indigo grounds, violet light, hard geometry, fine grain — at matching aspect
 ratios and contrast. Avatars and blog covers are likewise generated
 deterministically from a seed.
 
-To swap in real photography, replace the `ProjectArt` / `EditorialArt` /
-`PortraitArt` components with `next/image` and add the host to
-`images.remotePatterns` in `next.config.ts`.
+### Case-study screenshots
+
+Live builds are shown with real screenshots instead of artwork. A project in
+`lib/data.ts` sets either `art` (a generated composition) or `shots`:
+
+```ts
+shots: {
+  cover:   { src: "/works/<slug>/cover.webp", alt: "…" },   // 1440×900
+  gallery: [{ src: "/works/<slug>/….webp", alt: "…" }, …],   // 1440×900
+  mobile:  { src: "/works/<slug>/mobile.webp", alt: "…" },  // 390×844 @2x
+},
+```
+
+Files live in `public/works/<slug>/`. `components/ui/ProjectCover.tsx` picks
+the right visual for cards and case studies; the first gallery shot sits in
+the first chapter, the rest plus the phone shot fill the "Inside the Build"
+section. `review` is optional — the client quote block is skipped without it.
 
 ---
 

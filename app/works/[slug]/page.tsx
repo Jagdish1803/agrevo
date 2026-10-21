@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProjectArt } from "@/components/ui/Artwork";
+import { ProjectCover, Screenshot } from "@/components/ui/ProjectCover";
 import { Reveal } from "@/components/ui/Reveal";
 import { SplitText } from "@/components/ui/SplitText";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -58,9 +59,15 @@ export default async function ProjectPage({ params }: Params) {
       {/* ---------------- Cover ---------------- */}
       <Reveal direction="up" amount={0.05}>
         <div className="container-wide">
-          <ProjectArt
-            variant={project.art}
-            className="aspect-[16/10] overflow-hidden rounded-[24px] md:aspect-[16/8] md:rounded-[32px]"
+          <ProjectCover
+            project={project}
+            sizes="(min-width: 1440px) 1360px, 100vw"
+            preload
+            className={`aspect-[16/10] overflow-hidden rounded-[24px] md:rounded-[32px] ${
+              // Screenshots keep their own 16:10 frame so the page's
+              // header and call to action are never cropped away.
+              project.shots ? "" : "md:aspect-[16/8]"
+            }`}
           />
         </div>
       </Reveal>
@@ -114,10 +121,18 @@ export default async function ProjectPage({ params }: Params) {
 
               {index === 0 ? (
                 <Reveal direction="up" delay={0.1}>
-                  <ProjectArt
-                    variant={project.art}
-                    className="mt-4 aspect-[16/10] overflow-hidden rounded-[20px] md:rounded-[24px]"
-                  />
+                  {project.shots ? (
+                    <Screenshot
+                      shot={project.shots.gallery[0]}
+                      sizes="(min-width: 810px) 55vw, 100vw"
+                      className="mt-4 aspect-[16/10] overflow-hidden rounded-[20px] md:rounded-[24px]"
+                    />
+                  ) : (
+                    <ProjectArt
+                      variant={project.art}
+                      className="mt-4 aspect-[16/10] overflow-hidden rounded-[20px] md:rounded-[24px]"
+                    />
+                  )}
                 </Reveal>
               ) : null}
             </div>
@@ -125,23 +140,58 @@ export default async function ProjectPage({ params }: Params) {
         </section>
       ))}
 
+      {/* ---------------- Screens ---------------- */}
+      {project.shots ? (
+        <section className="pb-16 md:pb-24">
+          <div className="container-wide">
+            <SectionHeading label="Screens" title="Inside the Build" />
+
+            <div className="mt-10 grid items-start gap-5 md:mt-14 md:grid-cols-[1fr_0.42fr] md:gap-6">
+              <div className="grid gap-5 md:gap-6">
+                {project.shots.gallery.slice(1).map((shot) => (
+                  <Reveal key={shot.src} direction="up">
+                    <Screenshot
+                      shot={shot}
+                      sizes="(min-width: 810px) 65vw, 100vw"
+                      className="aspect-[16/10] overflow-hidden rounded-[20px] md:rounded-[24px]"
+                    />
+                  </Reveal>
+                ))}
+              </div>
+
+              <Reveal direction="up" delay={0.1} className="md:sticky md:top-28">
+                <div className="mx-auto max-w-[340px] rounded-[44px] bg-night p-2.5 shadow-[0_24px_60px_-30px_rgba(0,0,0,0.45)]">
+                  <Screenshot
+                    shot={project.shots.mobile}
+                    sizes="340px"
+                    className="aspect-[390/844] overflow-hidden rounded-[36px]"
+                  />
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {/* ---------------- Client review ---------------- */}
-      <section className="pb-16 md:pb-24">
-        <div className="container-x">
-          <Reveal direction="up">
-            <figure className="rounded-[24px] bg-surface p-8 md:rounded-[32px] md:p-14">
-              <p className="eyebrow">(Client Review)</p>
-              <blockquote className="display mt-6 text-[28px] leading-[1.15] md:text-[40px]">
-                “{project.review.quote}”
-              </blockquote>
-              <figcaption className="mt-8 border-t border-line pt-6 text-[15px]">
-                <span className="block font-medium">{project.review.author}</span>
-                <span className="block text-ink-soft">{project.review.role}</span>
-              </figcaption>
-            </figure>
-          </Reveal>
-        </div>
-      </section>
+      {project.review ? (
+        <section className="pb-16 md:pb-24">
+          <div className="container-x">
+            <Reveal direction="up">
+              <figure className="rounded-[24px] bg-surface p-8 md:rounded-[32px] md:p-14">
+                <p className="eyebrow">(Client Review)</p>
+                <blockquote className="display mt-6 text-[28px] leading-[1.15] md:text-[40px]">
+                  “{project.review.quote}”
+                </blockquote>
+                <figcaption className="mt-8 border-t border-line pt-6 text-[15px]">
+                  <span className="block font-medium">{project.review.author}</span>
+                  <span className="block text-ink-soft">{project.review.role}</span>
+                </figcaption>
+              </figure>
+            </Reveal>
+          </div>
+        </section>
+      ) : null}
 
       {/* ---------------- Next project ---------------- */}
       <section className="pb-20 md:pb-28">
@@ -154,8 +204,9 @@ export default async function ProjectPage({ params }: Params) {
               className="group block overflow-hidden rounded-[24px] bg-surface md:rounded-[32px]"
             >
               <div className="grid md:grid-cols-[1.15fr_1fr]">
-                <ProjectArt
-                  variant={next.art}
+                <ProjectCover
+                  project={next}
+                  sizes="(min-width: 810px) 55vw, 100vw"
                   className="aspect-[16/11] size-full overflow-hidden transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04] md:aspect-auto md:min-h-[360px]"
                 />
                 <div className="flex flex-col justify-between gap-8 p-6 md:p-10">
