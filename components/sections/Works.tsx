@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { ProjectCover } from "@/components/ui/ProjectCover";
+import { ProjectArt } from "@/components/ui/Artwork";
 import { ArrowUpRight } from "@/components/ui/icons";
 import { projects, type Project } from "@/lib/data";
 
@@ -85,9 +85,8 @@ function WorkCard({
           <div className="grid gap-0 md:grid-cols-[1.15fr_1fr]">
             {/* ---- Artwork ---- */}
             <div className="relative aspect-[16/11] overflow-hidden md:aspect-auto md:min-h-[420px]">
-              <ProjectCover
-                project={project}
-                sizes="(min-width: 810px) 55vw, 100vw"
+              <ProjectArt
+                variant={project.art}
                 className="size-full transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
               />
               <span className="absolute top-5 left-5 rounded-full bg-black/40 px-3 py-1.5 text-[12px] text-white backdrop-blur-md">

@@ -9,9 +9,7 @@
 /*  Projects                                                             */
 /* -------------------------------------------------------------------- */
 
-export type Screenshot = { src: string; alt: string };
-
-type ProjectBase = {
+export type Project = {
   slug: string;
   name: string;
   tagline: string;
@@ -19,141 +17,15 @@ type ProjectBase = {
   year: string;
   role: string;
   services: string[];
+  /** Vector artwork key rendered by <ProjectArt />. */
+  art: "archin" | "vntnr" | "aeorim";
   scope: string;
   date: string;
   chapters: { title: string; body: string[] }[];
-  review?: { quote: string; author: string; role: string };
+  review: { quote: string; author: string; role: string };
 };
 
-/**
- * A project is illustrated either by generated vector artwork or by real
- * screenshots of the build (files in `public/works/<slug>/`).
- */
-export type Project = ProjectBase &
-  (
-    | {
-        /** Vector artwork key rendered by <ProjectArt />. */
-        art: "archin" | "vntnr" | "aeorim";
-        shots?: never;
-      }
-    | {
-        art?: never;
-        /** Desktop shots are 1440×900; the mobile shot is 390×844 @2x. */
-        shots: {
-          cover: Screenshot;
-          gallery: Screenshot[];
-          mobile: Screenshot;
-        };
-      }
-  );
-
 export const projects: Project[] = [
-  {
-    slug: "raya-resorts",
-    name: "Raya Resorts",
-    tagline: "Raya Resorts, North Goa",
-    intro:
-      "A boutique pool resort in Assagao, rebuilt as a fast, cinematic website that sells the stay before guests ever arrive.",
-    year: "2026",
-    role: "Design & Development",
-    services: ["Website Design", "Web Development", "Booking Flow", "SEO"],
-    shots: {
-      cover: {
-        src: "/works/raya-resorts/cover.webp",
-        alt: "Raya Resorts home page: “Goa, unhurried.” over the resort pool at dusk",
-      },
-      gallery: [
-        {
-          src: "/works/raya-resorts/showcase.webp",
-          alt: "“Four ways to fall for Raya” — expanding panels for rooms, dining, spa and weddings",
-        },
-        {
-          src: "/works/raya-resorts/pool.webp",
-          alt: "Full-screen pool section: “One of the largest pools in North Goa.”",
-        },
-        {
-          src: "/works/raya-resorts/amenities.webp",
-          alt: "“Everything, right here.” — photo tiles for the pool and pool bar above amenity cards",
-        },
-      ],
-      mobile: {
-        src: "/works/raya-resorts/mobile.webp",
-        alt: "Raya Resorts home page on a phone",
-      },
-    },
-    scope: "Website Redesign, Development",
-    date: "October 2026",
-    chapters: [
-      {
-        title: "Discovery & Strategy",
-        body: [
-          "Raya has sixty-four rooms, private plunge pools and one of the largest swimming pools in North Goa — a lot to say, so we started from the guest's questions: which room, what it costs, what a day there feels like, and how to book.",
-          "That gave us the structure. Rooms are presented like products, each with highlights, a slideshow and spec-style details, and a compare tool to weigh them side by side. Dining, the spa, weddings and experiences each got a page of their own.",
-        ],
-      },
-      {
-        title: "Design & Build",
-        body: [
-          "The look comes straight from the Raya logo: burgundy, champagne gold and a Cormorant Garamond display serif. We traced the emblem into vector paths so it stays sharp at any size, and the home hero draws it line by line.",
-          "Built in Next.js with scroll-driven motion — a shrinking full-bleed hero, a pool that zooms to fill the screen, a pinned “day at Raya” story — all of it switched off for visitors who prefer reduced motion.",
-          "Booking works like an online store: pick a room, dates, guests and extras, with a live summary that follows you down the page. Every page ships with SEO metadata, structured data, a sitemap and Open Graph images.",
-        ],
-      },
-    ],
-  },
-  {
-    slug: "smita-dental",
-    name: "Smita Dental",
-    tagline: "Smita Dental Care Centre",
-    intro:
-      "A trusted Vashi dental clinic since 1999, given a calm, animated website that explains every treatment and makes booking a visit effortless.",
-    year: "2026",
-    role: "Design & Development",
-    services: ["Website Design", "Web Development", "Content", "SEO"],
-    shots: {
-      cover: {
-        src: "/works/smita-dental/cover.webp",
-        alt: "Smita Dental home page: “Dentistry, done beautifully.” over the clinic video",
-      },
-      gallery: [
-        {
-          src: "/works/smita-dental/clinic.webp",
-          alt: "Clinic stats above the “Step inside” gallery of treatment rooms and reception",
-        },
-        {
-          src: "/works/smita-dental/treatments.webp",
-          alt: "“Everything your smile needs. Under one roof.” — the treatments section",
-        },
-        {
-          src: "/works/smita-dental/dentists.webp",
-          alt: "“Specialist expertise. Personal care.” — profiles of the clinic's dentists",
-        },
-      ],
-      mobile: {
-        src: "/works/smita-dental/mobile.webp",
-        alt: "Smita Dental home page on a phone, with call, WhatsApp and booking buttons",
-      },
-    },
-    scope: "Website Redesign, Development",
-    date: "October 2026",
-    chapters: [
-      {
-        title: "Discovery & Strategy",
-        body: [
-          "Smita Dental Care Centre has treated over 18,500 patients across twenty-five years, led by a prosthodontist who teaches the next generation of dentists. Patients come anxious; the site needed to feel as calm and careful as the clinic itself.",
-          "We rewrote the structure around what patients look for: eighteen treatment pages that explain each procedure plainly, eight after-care guides for the days after a visit, the doctors behind the work, and an appointment form never more than a tap away.",
-        ],
-      },
-      {
-        title: "Design & Build",
-        body: [
-          "The home page opens on a full-bleed loop of the clinic itself, with the full tour a click away. Headlines rise word by word with a serif italic accent, stats count up, and a quiet ticker runs through every treatment.",
-          "On phones, call, WhatsApp and booking sit in a bar at the bottom of every screen, and the menu shows clinic hours and contact details up front.",
-          "The site exports as plain static files with one small PHP form handler, so it runs on the clinic's existing hosting. Every old page URL redirects to its new home, so no search ranking is lost.",
-        ],
-      },
-    ],
-  },
   {
     slug: "archin",
     name: "Archin",
